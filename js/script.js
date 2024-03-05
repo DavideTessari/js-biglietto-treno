@@ -15,24 +15,24 @@ const userKm = parseInt(prompt('Dimmi il numero di chilometri che vuole percorre
 // Chiedo l'età
 const userAge = parseInt(prompt('Dimmi l\'età'));
 
-
 // Logica
 
 // Il prezzo del biglietto è definito in base ai km (0.21 € al km)
-const userPrice = userKm * 0.21;
+let userPrice = userKm * 0.21;
 
 // Applico uno sconto del 20% per i minorenni, applico uno sconto del 40% per gli over 65.
-let userMessage
+let price = userPrice;
 if (userAge < 18) {
-    userMessage = (userPrice.toFixed(2) * 20) / 100;
+    price = (userPrice * 20) / 100;
+    alert("Hai ottenuto il 20% di sconto 👌");
 } else if (userAge > 65) {
-    userMessage = (userPrice.toFixed(2) * 40) / 100;
-} else {
-    userMessage = userPrice.toFixed(2);
+    price = (userPrice * 40) / 100;
+    alert("Hai ottenuto il 40% di sconto 👌");
 }
 
-
 // Stampo il risultato (2 decimali)
+const priceFixed = price.toFixed(2);
+const userMessage = "Il prezzo della corsa è " + priceFixed + "€";
 
 // alert(userMessage)
 document.getElementById('message').innerHTML = userMessage;
