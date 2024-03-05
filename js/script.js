@@ -19,20 +19,20 @@ const userAge = parseInt(prompt('Dimmi l\'età'));
 // Logica
 
 // Il prezzo del biglietto è definito in base ai km (0.21 € al km)
-const userPrice = userKm * 0.21 + '€';
+const userPrice = userKm * 0.21;
 
 // Applico uno sconto del 20% per i minorenni, applico uno sconto del 40% per gli over 65.
-let userMessage;
+let userMessage
 if (userAge < 18) {
-    userMessage = userPrice * 20 / 100;
-} else if(userAge > 65) {
-    userMessage = userPrice * 40 / 100;
+    userMessage = (userPrice.toFixed(2) * 20) / 100;
+} else if (userAge > 65) {
+    userMessage = (userPrice.toFixed(2) * 40) / 100;
 } else {
-    userMessage = userPrice;
-};
+    userMessage = userPrice.toFixed(2);
+}
 
 
-// Stampo il risultato (2 decimali)50
+// Stampo il risultato (2 decimali)
 
-// alert(userMessage);
+// alert(userMessage)
 document.getElementById('message').innerHTML = userMessage;
