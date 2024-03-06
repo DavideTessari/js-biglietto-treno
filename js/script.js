@@ -23,10 +23,10 @@ let userPrice = userKm * 0.21;
 // Applico uno sconto del 20% per i minorenni, applico uno sconto del 40% per gli over 65.
 let price = userPrice;
 if (userAge < 18) {
-    price = (userPrice * 20) / 100;
+    price = price - (price * 20 / 100);
     alert("Hai ottenuto il 20% di sconto 👌");
 } else if (userAge > 65) {
-    price = (userPrice * 40) / 100;
+    price = price - (price * 40 / 100);
     alert("Hai ottenuto il 40% di sconto 👌");
 }
 
